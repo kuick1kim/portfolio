@@ -1,461 +1,1058 @@
+
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDV38WS693"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-			crossorigin="anonymous"
-		/>
-		<title>외모를 보자</title>
-		<meta name="title" content="동물상 테스트" />
-		<meta
-			name="subject"
-			content="얼굴로 보는 인공지능 동물상 테스트, 나와 닮은 동물상을 찾아보세요!"
-		/>
-		<meta
-			name="keywords"
-			content="동물상 테스트, 인공지능 동물상 테스트, 얼굴상, 얼굴상 테스트, 나와 닮은 동물, 동물상 찾기, 얼굴로 보는 동물상, 얼굴 동물, 동물얼굴, animalface, 강아지상, 고양이상, 여우상, 사슴상, 토끼상, 곰상, 공룡상, 인공지능 동물상, AI 얼굴상, AI 동물상"
-		/>
+            gtag('config', 'G-MDV38WS693');
+        </script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+            name="description"
+            content="인스타 속 핫한 인공지능 첫인상 테스트! 다른 사람이 본 내 첫인상은 어떨까? | 당신의첫인상느낌은?, 그룹 내 포지션, 내 word cloud"
+        />
+        <meta
+            name="keywords"
+            content="인공지능, 첫인상, 첫인상테스트, 너의 인상은, 연예인 첫인상 테스트, 연예인, 연예인 첫인상, 나와 같은 인상을 가진 연예인, 이미지, 이미지 메이킹, 3초 법칙, 인스타 첫인상, 인스타 첫인상 테스트, 페이스북 첫인상, 페이스북 첫인상 테스트, 첫인상 보는법, 인스타심리테스트, 인공지능이말해주는내첫인상, 인스타그램테스트, 2021, 나의첫인상은, 나의인상은, 너의 첫인상은, 3초연구소, 그룹 내 포지션, word cloud, 내 word cloud, "
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI 얼굴분석" />
+        <meta
+            property="og:description"
+            content="인스타 속 핫한 인공지능 첫인상 테스트! 다른 사람이 본 내 첫인상은 어떨까? | 당신의 첫인상 느낌은?, 내 word cloud"
+        />
+        <meta
+            property="og:image"
+            content="https://user-images.githubusercontent.com/56578913/108587786-0cfc8b80-7399-11eb-86d0-2680137adc1e.png"
+        />
+        <!-- <link rel="canonical" href="https://3seclab.com/test/0" /> -->
 
-		<meta name="author" content="조코딩" />
-		<link rel="stylesheet" href="style.css" />
-		<link rel="canonical" href="https://awesome-euclid-ad1cbc.netlify.app/" />
-		<meta property="og:url" content="https://awesome-euclid-ad1cbc.netlify.app/" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="동물상 테스트" />
-		<meta
-			property="og:description"
-			content="얼굴로 보는 인공지능 동물상 테스트, 나와 닮은 동물상을 찾아보세요! 대표 동물상 연예인 사진 데이터로 학습한 인공지능이 나의 얼굴로 동물상과 특징을 찾아드립니다. 회원가입도 필요없이 화면에서 바로 확인해보세요! 사진 데이터는 그 어디에도 전송되지 않습니다. 인공지능이 보는 나의 동물상 테스트 한번 해보세요! 강아지상? 고양이상? 여우상? 사슴상? 토끼상? 곰상? 공룡상? 얼굴상 테스트를 통해 나와 닮은 동물 찾기를 할 수 있습니다."
-		/>
-		<meta
-			property="og:image"
-			content="http://image.kyobobook.co.kr/newimages/giftshop_new/goods/400/1710/hot1621498147122.jpg"
-		/>
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<script
-			type="text/javascript"
-			src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e64b3727e862b06"
-		></script>
-
-		<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61b0438963e5691d"></script> -->
-	</head>
-
-	<body>
-		<nav class="p-3 container navbar navbar-expand-lg navbar-light">
-			<a class="navbar-brand" href="https://awesome-euclid-ad1cbc.netlify.app/"
-				>동물상 테스트</a
-			>
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarNav"
-				aria-controls="navbarNav"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">
-							<span class="sr-only">(current)</span>
-						</a>
-					</li>
-					<li class="nav-item active">
-						<!-- <a class="nav-link" id="yotube-top-link" href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">조코딩 유튜브 채널</a> -->
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<section class="section">
-			<h1 class="title">동물상 테스트</h1>
-			<h2 class="subtitle">얼굴로 보는 인공지능 동물상 테스트</h2>
-			<h2 class="sr-only">나는 어떤 동물과 닮았을까? 나의 동물상 찾기를 해보세요!</h2>
-			<h3 class="sr-only">
-				대표 동물상 연예인 사진 데이터로 학습한 인공지능이 나의 얼굴로 동물상과 특징을
-				찾아드립니다.
-			</h3>
-			<h4 class="sr-only">
-				본 서비스는 Google의 인공지능 teachable machine 2.0을 활용하였습니다.
-			</h4>
-			<p class="sr-only">
-				얼굴로 보는 인공지능 동물상 테스트, 나와 닮은 동물상을 찾아보세요! 대표 동물상
-				연예인 사진 데이터로 학습한 인공지능이 나의 얼굴로 동물상과 특징을 찾아드립니다.
-				회원가입도 필요없이 화면에서 바로 확인해보세요! 사진 데이터는 그 어디에도 전송되지
-				않습니다. 인공지능이 보는 나의 동물상 테스트 한번 해보세요! 강아지상? 고양이상?
-				여우상? 사슴상? 토끼상? 곰상? 공룡상? 얼굴상 테스트를 통해 나와 닮은 동물 찾기를 할
-				수 있습니다.
-			</p>
-		</section>
-
-		<section class="youtube pb-3" id="yotube-mid-link">
-			<!-- <div class="container mt-3 youtube-cover d-flex flex-row-reverse align-items-center">
-            <img src="img/youtube-copy.jpg" alt="youtube-icon" class="youtube-icon">
-            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link">By 조코딩 유튜브 채널</a>
-        </div> -->
-		</section>
-
-		<h3 class="pb-2 d-flex justify-content-center">성별을 선택하세요</h3>
-
-		<section class="d-flex justify-content-center">
-			<p class="d-flex align-items-center pr-3">여자</p>
-			<div>
-				<input type="checkbox" id="gender" />
-				<label for="gender">
-					<span class="knob">
-						<i></i>
-					</span>
-				</label>
-			</div>
-			<p class="d-flex align-items-center pl-3">남자</p>
-		</section>
-
-		<script
-			class="jsbin"
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-		></script>
-
-		<div class="mt-3 container file-upload">
-			<div class="image-upload-wrap">
-				<input
-					class="file-upload-input"
-					type="file"
-					onchange="readURL(this);"
-					accept="image/*"
-				/>
-				<div class="drag-text">
-					<img src="img/upload.svg" class="mt-5 pt-5 upload" />
-					<h3 class="mb-5 pb-5 pt-4 upload-text">
-						얼굴 사진을 올려놓거나 눌러서 업로드하세요!
-					</h3>
-				</div>
-			</div>
-
-			<div class="file-upload-content">
-				<img class="file-upload-image" id="face-image" src="#" alt="your image" />
-
-				<div id="loading" class="animated bounce">
-					<div class="spinner-border" role="status">
-						<span class="sr-only">Loading...</span>
-					</div>
-
-					<p class="text-center">AI가 사진을 분석하고 있어요...잠시만요!</p>
-				</div>
-
-				<p class="result-message"></p>
-
-				<div id="label-container" class="d-flex flex-column justify-content-around"></div>
-				<div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
-
-				<!-- <div id="addThis" class="addthis_inline_share_toolbox"></div> -->
-
-				<div class="pt-3 image-title-wrap">
-					<button
-						type="button p-2"
-						class="try-again-btn"
-						onclick="window.location.reload();"
-					>
-						<span class="try-again-text">다른 사진으로 재시도</span>
-					</button>
-				</div>
-			</div>
-		</div>
 		
 		
-		<ins class="kakao_ad_area"
-			style="display: none;"
-			data-ad-unit="DAN-l6EadscBymzvk4ux"
-			data-ad-width="320"
-			data-ad-height="100"></ins>
 		
-		<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+		
+		
+		
+		
+		
+		
+		
+		
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Advent+Pro:600"
+            rel="stylesheet"
+            type="text/css"
+        />
 
-		<footer class="footer pt-5 container d-flex justify-content-center">
-			<div>
-				<h3>아래에 댓글도 남겨주세용</h3>
-			</div>
-		</footer>
+		
+		
+		
+		
+		
+		
+        <!-- font -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
+        />
 
-		<!-- <!-- ########################################## -->
+		
+		
+		
+		
+		
+		
+        <!-- font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
 
-		<div id="disqus_thread"></div>
-		<script>
-			(function () {
-				// DON'T EDIT BELOW THIS LINE
-				var d = document,
-					s = d.createElement('script');
-				s.src = 'https://mirror-4.disqus.com/embed.js';
-				s.setAttribute('data-timestamp', +new Date());
-				(d.head || d.body).appendChild(s);
-			})();
-		</script>
-		<noscript
-			>Please enable JavaScript to view the
-			<a href="https://disqus.com/?ref_noscript">comments powered by Disqus. </a></noscript
-		>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+        <link rel="shortcut icon" href="/data/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
 
-		<!-- ########################################## -->
-		-->
+        <title>AI lab</title>
+		
+		
 
-		<script>
-			function readURL(input) {
-				if (input.files && input.files[0]) {
-					var reader = new FileReader();
-					reader.onload = function (e) {
-						$('.image-upload-wrap').hide();
-						$('#loading').show();
-						$('.file-upload-image').attr('src', e.target.result);
-						$('.file-upload-content').show();
-						$('.image-title').html(input.files[0].name);
-					};
-					reader.readAsDataURL(input.files[0]);
-					init().then(function () {
-						console.log('hello');
-						predict();
-						$('#loading').hide();
-					});
-				} else {
-					removeUpload();
-				}
-			}
+        <!-- jQCloud -->
+        <link rel="stylesheet" type="text/css" href="data/jqcloud.min.css" />
 
-			function removeUpload() {
-				$('.file-upload-input').replaceWith($('.file-upload-input').clone());
-				$('.file-upload-content').hide();
-				$('.image-upload-wrap').show();
-			}
-			$('.image-upload-wrap').bind('dragover', function () {
-				$('.image-upload-wrap').addClass('image-dropping');
-			});
-			$('.image-upload-wrap').bind('dragleave', function () {
-				$('.image-upload-wrap').removeClass('image-dropping');
-			});
-		</script>
-		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-		<script type="text/javascript">
-			let URL;
+       		
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61b0438963e5691d"></script>
 
-			const urlMale = 'https://teachablemachine.withgoogle.com/models/o9D1N5TN/';
-			const urlFemale = 'https://teachablemachine.withgoogle.com/models/bB3YHn5r/';
-			let model, webcam, labelContainer, maxPredictions;
-			async function init() {
-				if (document.getElementById('gender').checked) {
-					URL = urlMale;
-				} else {
-					URL = urlFemale;
-				}
-				const modelURL = URL + 'model.json';
-				const metadataURL = URL + 'metadata.json';
-				model = await tmImage.load(modelURL, metadataURL);
-				maxPredictions = model.getTotalClasses();
-				labelContainer = document.getElementById('label-container');
-				for (let i = 0; i < maxPredictions; i++) {
-					var element = document.createElement('div');
-					element.classList.add('d-flex');
-					labelContainer.appendChild(element);
-				}
-			}
+        
+		
+        <!-- Page View Data -->
+        <script src="https://3seclab.com/data/pageView.js"></script>
 
-			async function predict() {
-				var image = document.getElementById('face-image');
-				const prediction = await model.predict(image, false);
-				prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-				console.log(prediction[0].className);
-				var resultTitle, resultExplain, resultCeleb;
-				if (document.getElementById('gender').checked) {
-					switch (prediction[0].className) {
-						case 'dog':
-							resultTitle = '귀여운 순둥이 강아지상';
-							resultExplain =
-								'다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 친절하고 활발한 성격으로 어디에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!';
-							resultCeleb = '강아지상 연예인: 강다니엘, 백현(엑소), 박보검, 송중기';
-							break;
-						case 'cat':
-							resultTitle = '츤데레 매력쟁이 고양이상';
-							resultExplain =
-								'무뚝뚝한 당신의 첫인상은 차가워 보이지만 묘한 매력을 풍겨 언제나 인기가 넘친다. 자존심이 세계 1등과 맞먹지만 관심 받는 것을 좋아하고 연인에게는 은근히 애교쟁이다. 시크한 츤데레로 연인에게 끊임없이 설렘을 안겨주는 당신은 고양이와 닮았다!';
-							resultCeleb =
-								'고양이상 연예인: 황민현(뉴이스트), 시우민(엑소), 강동원, 이종석, 이준기';
-							break;
-						case 'rabbit':
-							resultTitle = '천진난만한 매력의 토끼상';
-							resultExplain =
-								'천진난만하고 귀여운 당신은 주변 사람들에게 기쁨을 주는 행복바이러스다! 호기심이 많아 활발하며 귀엽고 순수한 외모로 연인의 보호본능을 자극한다. 존재 자체가 상큼한 당신은 특별한 애교 없이도 연인에게 너무나도 사랑스럽다!';
-							resultCeleb =
-								'토끼상 연예인: 정국(방탄소년단), 바비(아이콘), 박지훈(워너원), 수호(엑소)';
-							break;
-						case 'dinosaur':
-							resultTitle = '따뜻한 나쁜남자 공룡상';
-							resultExplain =
-								'무심한 성격에 첫인상은 나쁜 남자 같지만, 알고 보면 따뜻함이 묻어나는 당신! 시크한 매력에 선뜻 다가가지 못하지만 한번 다가가면 헤어나올 수 없는 터프한 매력을 가진 카리스마 있는 남자다.';
-							resultCeleb =
-								'공룡상 연예인: 윤두준(하이라이트), 이민기, 김우빈, 육성재(비투비), 공유';
-							break;
-						case 'bear':
-							resultTitle = '포근한 매력의 곰상';
-							resultExplain =
-								'첫 인상은 무서워 보이지만 알고 보면 귀여운 매력의 당신! 꼼꼼하고 섬세한 성격으로 연인을 헌신적으로 챙겨주는 당신은 연인에게 듬직한 존재! 포근한 매력에 듬직함까지 갖춘 최고의 남자다!';
-							resultCeleb = '곰상 연예인: 마동석, 조진웅, 조세호, 안재홍';
-							break;
-						default:
-							resultTitle = '알수없음';
-							resultExplain = '';
-							resultCeleb = '';
-					}
-				} else {
-					switch (prediction[0].className) {
-						case 'dog':
-							resultTitle = '귀여운 순둥이 강아지상';
-							resultExplain =
-								'다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 상냥하고 활발한 성격으로 어디에서도 인기폭발이지만, 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!';
-							resultCeleb =
-								'강아지상 연예인: 박보영, 아이유, 윤승아, 민아(걸스데이), 한지민';
-							break;
-						case 'cat':
-							resultTitle = '츤데레 매력쟁이 고양이상';
-							resultExplain =
-								'도도하고 섹시한 당신은 첫인상은 차가워 보이지만 묘한 매력을 풍겨 언제나 인기가 넘친다. 자존심이 세계 1등과 맞먹지만 관심 받는 것을 좋아하고 애인에게 관심이 받고 싶을 때는 애교도 부릴 줄 아는 귀여운 매력을 가졌다. 시크한 츤데레로 연인에게 끊임없이 설렘을 안겨주는 당신은 고양이와 닮았다!';
-							resultCeleb =
-								'고양이상 연예인: 안소희(원더걸스), 오연서, 한예슬, 이성경, 이효리';
-							break;
-						case 'rabbit':
-							resultTitle = '상큼발랄한 매력의 토끼상';
-							resultExplain =
-								'발랄하고 귀여운 당신은 주변 사람들에게 기쁨을 주는 행복바이러스다! 호기심이 많아 활발하며 귀엽고 순수한 외모로 연인의 보호본능을 자극한다. 존재 자체가 상큼하고 깜찍한 당신은 특별한 애교 없이도 연인에게 너무나도 사랑스럽다!';
-							resultCeleb =
-								'토끼상 연예인: 수지, 나연(트와이스), 예린(여자친구), 한승연(카라), 문채원';
-							break;
-						case 'deer':
-							resultTitle = '온순하고 우아한 사슴상';
-							resultExplain =
-								'맑고 영롱한 분위기의 당신은 사슴처럼 차분한 성격의 소유자다. 초롱초롱한 눈망울이 당신의 가장 큰 트레이드마크며 따스하고 온순한 눈빛을 가져 사랑스러움을 항상 머금고 있다! 부끄러움이 많아 애정표현이 낯설은 당신은 연인에게조차 신비한 존재지만 따뜻한 성격으로 연인의 마음을 사로잡는 능력을 가졌다.';
-							resultCeleb =
-								'사슴상 연예인: 윤아(소녀시대), 이연희, 고아라, 문근영, 정유미(부산행 배우)';
-							break;
-						case 'fox':
-							resultTitle = '섹시한 밀당고수 여우상';
-							resultExplain =
-								'사람을 홀리는 매력을 가진 당신은 선뜻 다가가기 힘든 섹시한 매력을 가졌다. 우아한 외모에 더해 뛰어난 센스의 성격을 가진 당신은 어딜가도 주목받는 주인공이다! 사교적인 성격을 가져 연인에게도 적극적으로 애정표현을 하지만 밀당의 고수인 당신은 연인의 혼을 쏙 빼놓는 매력쟁이다.';
-							resultCeleb =
-								'여우상 연예인: 경리(나인뮤지스), 예지(있지), 한혜진(모델), 헤이즈, 지연(티아라)';
-							break;
-						default:
-							resultTitle = '알수없음';
-							resultExplain = '';
-							resultCeleb = '';
-					}
-				}
-				var title =
-					"<div class='" +
-					prediction[0].className +
-					"-animal-title'>" +
-					resultTitle +
-					'</div>';
-				var explain = "<div class='animal-explain pt-2'>" + resultExplain + '</div>';
-				var celeb =
-					"<div class='" +
-					prediction[0].className +
-					"-animal-celeb pt-2 pb-2'>" +
-					resultCeleb +
-					'</div>';
-				$('.result-message').html(title + explain + celeb);
-				var barWidth;
-				for (let i = 0; i < maxPredictions; i++) {
-					if (prediction[i].probability.toFixed(2) > 0.1) {
-						barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
-					} else if (prediction[i].probability.toFixed(2) >= 0.01) {
-						barWidth = '4%';
-					} else {
-						barWidth = '2%';
-					}
-					var labelTitle;
-					switch (prediction[i].className) {
-						case 'dog':
-							labelTitle = '강아지상';
-							break;
-						case 'cat':
-							labelTitle = '고양이상';
-							break;
-						case 'rabbit':
-							labelTitle = '토끼상';
-							break;
-						case 'dinosaur':
-							labelTitle = '공룡상';
-							break;
-						case 'bear':
-							labelTitle = '곰상';
-							break;
-						case 'deer':
-							labelTitle = '사슴상';
-							break;
-						case 'fox':
-							labelTitle = '여우상';
-							break;
-						default:
-							labelTitle = '알수없음';
-					}
-					var label =
-						"<div class='animal-label d-flex align-items-center'>" +
-						labelTitle +
-						'</div>';
-					var bar =
-						"<div class='bar-container position-relative container'><div class='" +
-						prediction[i].className +
-						"-box'></div><div class='d-flex justify-content-center align-items-center " +
-						prediction[i].className +
-						"-bar' style='width: " +
-						barWidth +
-						"'><span class='d-block percent-text'>" +
-						Math.round(prediction[i].probability.toFixed(2) * 100) +
-						'%</span></div></div>';
-					labelContainer.childNodes[i].innerHTML = label + bar;
-				}
-			}
-		</script>
-		<script>
-			function iosApp() {
-				document.getElementById('coupang').style.display = 'none';
-				$('#coupang ins').hide();
-				document.getElementById('addThis').style.display = 'none';
-				document.getElementById('disqus_thread').style.display = 'none';
-				var kakao = document.getElementsByClassName('kakao_ad_area');
-				for (var i = 0; i < kakao.length; i++) {
-					if (kakao[i]) {
-						kakao[i].style.display = 'none';
-					}
-				}
-				document.getElementById('yotube-top-link').style.display = 'none';
-				document.getElementById('yotube-mid-link').style.display = 'none';
-				document.getElementById('yotube-bottom-link').style.display = 'none';
-			}
-		</script>
-	</body>
-	<!-- 
-image input box
-Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+		
+		
+		
+		
+		
+        <!-- Taboola -->
+        <script type="text/javascript">
+            window._taboola = window._taboola || [];
+            _taboola.push({ article: 'auto' });
+            !(function (e, f, u, i) {
+                if (!document.getElementById(i)) {
+                    e.async = 1;
+                    e.src = u;
+                    e.id = i;
+                    f.parentNode.insertBefore(e, f);
+                }
+            })(
+                document.createElement('script'),
+                document.getElementsByTagName('script')[0],
+                '//cdn.taboola.com/libtrc/3seconds-3seclab/loader.js',
+                'tb_loader_script'
+            );
+            if (window.performance && typeof window.performance.mark == 'function') {
+                window.performance.mark('tbl_ic');
+            }
+        </script>
+
+        <!-- First Release -->
+        
+		
+		<!-- 2020.01.27 -->
+    </head>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <body>
+        <header id="header">
+            <a onclick="clickHeader();">
+                <div>
+                    <span class="name_3seclab">
+                        까꿍
+                    </span>
+                    | 인공지능
+                </div>
+            </a>
+        </header>
+        <content>
+            <!-- navigation bar -->
+        
+			
+			
+			
+			
+			
+			
+			
+			
+			<nav class="navbar navbar-expand-lg navbar-light nav-distance">
+                <a class="brand navbar-brand" href="https://animal-npqwo.run.goorm.io/animal78/0002/indexa.html">main</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    
+                </button>
+
+				
+				
+				
+				
+				
+				
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="https://awesome-euclid-ad1cbc.netlify.app/" class="nav-link">까아꿍</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+
+			
+			
+			
+			
+			
+			
+			
+			
+            <!-- Title -->
+            <section class="section">
+                <h2 class="subtitle">
+                    AI 얼굴 분석
+                </h2>
+                <div class="drag-text-a">
+				<h3>
+                                중요한 만남 / 중요한 미팅시 <br> 무대에 올라갈때 사용하세요 
+				
+					</h3></div>				
+                <!-- 
+                    <!-- 0-메인배너 -->
+                    <!-- <ins
+                        class="adsbygoogle"
+                        style="display: block; width: 300px; height: 250px;"
+                        data-ad-client="ca-pub-7052384650666721"
+                        data-ad-slot="8407317210"
+                    ></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div> --> 
+
+                
+            
+            </section>
+			
+
+            <!-- File upload input -->
+            <div class="mt-5 file-upload">
+                <div class="image-upload-wrap">
+                    <input
+                        class="file-upload-input"
+                        type="file"
+                        onchange="readURL(this);"
+                        accept="image/*"
+                    />
+                    <div class="drag-text">
+                        <h3>사진을 보내주세요!</h3>
+                    </div>
+                </div>
+                <div class="file-upload-content">
+                    <div class="d-flex justify-content-center">
+                        <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                    </div>
+
+					
+					
+					
+					
+					
+                    <div class="image-title-wrap">
+                        <div class="loaders">
+                            <div class="loader loader--style8" title="7">
+                                <svg
+                                    version="1.1"
+                                    id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px"
+                                    y="0px"
+                                    width="24px"
+                                    height="30px"
+                                    viewBox="0 0 24 30"
+                                    style="enable-background: new 0 0 50 50;"
+                                    xml:space="preserve"
+                                >
+                                    <rect
+                                        x="0"
+                                        y="10"
+                                        width="4"
+                                        height="10"
+                                        fill="#333"
+                                        opacity="0.2"
+                                    >
+                                        <animate
+                                            attributeName="opacity"
+                                            attributeType="XML"
+                                            values="0.2; 1; .2"
+                                            begin="0s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="height"
+                                            attributeType="XML"
+                                            values="10; 20; 10"
+                                            begin="0s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="y"
+                                            attributeType="XML"
+                                            values="10; 5; 10"
+                                            begin="0s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                    </rect>
+                                    <rect
+                                        x="8"
+                                        y="10"
+                                        width="4"
+                                        height="10"
+                                        fill="#333"
+                                        opacity="0.2"
+                                    >
+                                        <animate
+                                            attributeName="opacity"
+                                            attributeType="XML"
+                                            values="0.2; 1; .2"
+                                            begin="0.15s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="height"
+                                            attributeType="XML"
+                                            values="10; 20; 10"
+                                            begin="0.15s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="y"
+                                            attributeType="XML"
+                                            values="10; 5; 10"
+                                            begin="0.15s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                    </rect>
+                                    <rect
+                                        x="16"
+                                        y="10"
+                                        width="4"
+                                        height="10"
+                                        fill="#333"
+                                        opacity="0.2"
+                                    >
+                                        <animate
+                                            attributeName="opacity"
+                                            attributeType="XML"
+                                            values="0.2; 1; .2"
+                                            begin="0.3s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="height"
+                                            attributeType="XML"
+                                            values="10; 20; 10"
+                                            begin="0.3s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="y"
+                                            attributeType="XML"
+                                            values="10; 5; 10"
+                                            begin="0.3s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                    </rect>
+                                </svg>
+                            </div>
+                            <h2 class="loadingMessage">
+                                AI가 당신의 첫 인상을 분석 중입니다.
+                            </h2>
+                        </div>
+
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+                        <div class="result">
+                            <h2 class="subtitle" style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+                                당신의 첫인상 느낌은?
+                            </h2>
+                            <div
+                                class="upload-image-circle ratio img-responsive img-circle mt-5"
+                            ></div>
+                            <div class="resultName"></div>
+							
+							
+							<h2><p></h2>
+                            
+                            
+							
+							<!-- ////////////////////////////////////////// -->
+							<h2><p></h2>
+							 <!-- <div class="date mt-2" style="font-size: 1.7rem; margin-bottom: 0px;">
+                                 
+                            </div> -->
+                            <div
+                                id="my_favorite_latin_words"
+                                style="
+                                    max-width: -webkit-fill-available;
+                                    width: 37rem;
+                                    height: 300px;
+                                    margin: auto;
+                                "
+                            ></div>
+							
+							<!-- ////////////////////////////////////////// -->
+							
+                            <div class="d-flex justify-content-center" style="margin-bottom: 3rem;">
+								
+								
+								
+								
+								
+                                <div>    
+									
+                                </div>
+                                <div style="width: 60px;">
+                                
+                                </div>
+                                <div>
+                                   
+                                </div>
+                            </div>
+							<section class="instagram">
+								*미소 짓는 얼굴로 다시한번 올려주세요                
+                
+            				</section>
+					
+							
+							
+							<button type="button" onclick="retry()" class="remove-image mt-5">
+                                다시하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+			
+			
+			
+			
+			<!-- Button trigger modal -->
+            <button
+                id="btn_popup"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                style="display: none;"
+            ></button>
+
+   
+			
+			
+			<!-- Modal -->
+            <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                            <button type="button" class="btn-close" onclick="closePop();"></button>
+                        </div>
+                        <div class="modal-body">
+							<img
+                                src="data/999.png"
+                            />
+                            <h2>
+                                즐거우셨다면 공유해요
+                            </h2>
+                            <h1>
+                                <!-- <span class="bottom-line">예쁜사진 올리기</span> -->
+								<span>친구에게 공유</span>
+								
+								
+                            </h1>
+							<div id="addThis" class="addthis_inline_share_toolbox 39dz"></div>
+
+                            <h3>
+                                 
+                            </h3>
+                            <!-- <img
+                                src="data/999.png"
+                            /> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="openroot();">
+								
+                                <div>
+                                    다시 시작
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			
+            <!-- <h2 class="upload_message">
+                *최종 학습된 AI모델을 사용하므로 사진은 절대 저장되지 않습니다.
+            </h2> -->
+            <section class="instagram">
+                
+                <div class="hashtag" style="font-size: 1.8rem; color: #c8aa6e;">
+                    
+                </div>
+            </section>
+			
+			
+
+            <section class="instagram">
+				
+				<div class="hashtag" style="font-size: 1.8rem; color: #c8aa6e;">
+                   <br> 두번 이용시, 하단 광고한번 클릭!!<br>개발하는데 도움이 됩니다.
+                </div>
+				
+                
+               
+                <!-- 구글 0-하단배너1광고 -->
+                <!-- <div class="ad-banner"> -->
+					
+					
+					
+					
+                    <!-- 0-하단배너 -->
+                    <!-- <ins
+                        class="adsbygoogle"
+                        style="display: block; width: 300px; height: 250px;"
+                        data-ad-client="ca-pub-7052384650666721"
+                        data-ad-slot="5347159161"
+                    ></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    
+                </div> -->
+                <!-- 3초연구소 사이트 광고 -->
+                <!-- <div class="card-body" style="background: var(--bg_thumbnail), url(https://user-images.githubusercontent.com/56578913/132007566-6420b007-901c-4bb8-8b54-7e71e0426a18.png); background-size: cover;">
+                    <div class="card-title">3초 연구소 놀러가기</div>
+                    <button class="btn-card">
+                        <i onclick="goHome();" class="fas fa-chevron-circle-right"></i>
+                    </button>-->
+                <!-- </div>       -->
+				
+            </section>
+
+            <div class="copyrightSection">
+				공유하기<br><br><br>
+            
+			<div id="addThis" class="addthis_inline_share_toolbox 39dz"></div>
+				
+				
+			
+            </div>
+            
+            <div class="blank" style="height: 2rem;">
+          
+            </div>
+
+                      
+
+
+			
+			
+			
+        </content>
+		
+		
+		
+		
+		
+		
+		
+        <!-- Sharable Link
+https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script type="text/javascript">
+            // More API functions here:
+            // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+            // the link to your model provided by Teachable Machine export panel
+            // const urlTeachableMachine = 'https://urechanger.github.io/myModelServer/idx0_model/';
+			
+			const urlTeachableMachine = 'https://animal-npqwo.run.goorm.io/animal78/0002/model/';
+
+            let model, labelContainer, maxPredictions;
+
+            // Load the image model and setup the webcam
+            async function init() {
+                const modelURL = urlTeachableMachine + 'model.json';
+                const metadataURL = urlTeachableMachine + 'metadata.json';
+
+                // load the model and metadata
+                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                // or files from your local hard drive
+                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+            }
+
+            // run the webcam image through the image model
+            async function predict() {
+                // predict can take in an image, video or canvas html element
+                var face_image = document.getElementById('face-image');
+                const prediction = await model.predict(face_image);
+                prediction.sort((a, b) => (b.probability > a.probability ? 1 : -1));
+
+                var result_probability = 0;
+                var result = [];
+                for (let i = 0; i < 20; i++) {
+                    result.push(prediction[i].className);
+                    if (result_probability < 0.78) {
+                        result_probability += prediction[i].probability;
+                    }
+                }
+
+                return result;
+            }
+        </script>
+
+        <!-- data -->
+        <script src="data/impressionData.js"></script>
+        <script src="data/partnersData.js"></script>
+
+        <!-- jQuery, Popper.js, and Bootstrap JS -->
+		
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"
+        ></script>
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+
+		
+		
+        <!-- kakao adfit -->
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+		
+		
+        <!-- File upload input js -->
+        <script
+            class="jsbin"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+        ></script>
+        <script>
+            $(document).ready(() => {
+                var allResults = [];
+                var resultData = getData();
+                for (let i = 0; i < Object.keys(resultData).length; i++) {
+                    allResults.push(i + 1 + '. ' + resultData[i].result + ' ');
+                }
+                // $('.first-all-results').html(allResults.slice(0, 27));
+                // $('.second-all-results').html(allResults.slice(28, 55));
+            });
+        </script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.upload_message').hide();
+                        $('.image-upload-wrap').hide();
+                        $('.loaders').show();
+                        $('.file-upload-image').show();
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.upload-image-circle').css(
+                            'background-image',
+                            "url('" + e.target.result + "')"
+                        );
+                        $('.file-upload-content').show();
+                        $('.remove-image').hide();
+                        $('.addthis_inline_share_toolbox_irv5').hide();
+                        init().then(async () => {
+                            var prediction = await predict();
+                            drawWordCloud(prediction);
+                            $('.loaders').hide();
+                            $('.file-upload-image').hide();
+                            $('.result').show();
+                            $('.remove-image').show();
+                            $('.addthis_inline_share_toolbox_irv5').show();
+                        });
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    retry();
+                }
+            }
+
+            function retry() {
+                $('#btn_popup').click();
+            }
+
+            function openroot() {
+                gtag('event', '팝업(다시하기) 클릭');
+                location.href = 'https://animal-npqwo.run.goorm.io/animal78/0002/indexa.html';
+            }
+
+            function closePop() {
+                document.body.scrollIntoView(true);
+                setTimeout(function () {
+                    location.reload();
+                }, 600);
+            }
+
+            function removeImg() {
+                $('.upload_message').show();
+                $('.file-upload-input').val('');
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+                $('.result').hide();
+                $('#my_favorite_latin_words').jQCloud('destroy');
+            }
+
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+        </script>
+        <!-- jQCloud -->
+        <script type="text/javascript" src="data/jqcloud.min.js"></script>
+        
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<script>
+            function drawWordCloud(prediction) {
+                const results = getData();
+                const partners = getPartnersData();
+                for (var i = 0; i < 20; i++) {
+                    var name = '.popup' + (i + 1) + '_name';
+                    var percentageName = '.popup' + (i + 1) + '_percentage';
+                    $(name).html(results[prediction[i]].result);
+                    $(percentageName).html('' + (((12 - i) / 12) * 100).toFixed(2) + '%');
+
+                    gtag('event', results[prediction[i]].result);
+                }
+                $('.resultName').html(
+                    results[prediction[1]].adjective + ' ' + results[prediction[0]].noun
+                );
+                $('.resultPosition').html(
+                    '그룹 내 포지션 : ' + results[prediction[0]].position + ' 담당'
+                );
+                var result_message = '';
+                result_message +=
+                    "인공지능이 판단한 당신의 첫인상은 '" +
+                    results[prediction[1]].adjective +
+                    ' ' +
+                    results[prediction[0]].noun +
+                    "' 입니다. ";
+                result_message +=
+                    '본 테스트 결과는 전체의 ' +
+                    (
+                        (results[prediction[0]].percentage * results[prediction[1]].percentage) /
+                        10
+                    ).toFixed(2) +
+                    '%에 속하며 ';
+                result_message +=
+                    "가족, 친구 등 좋아하는 내 사람들과 있을 때는 '" +
+                    results[prediction[0]].position +
+                    "' 역할을 맡고 있습니다. ";
+                result_message +=
+                    '또한 ' +
+                    results[prediction[1]].adjective +
+                    ' 외모를 가진 당신은 ' +
+                    results[prediction[0]].ability +
+                    '을 지니고 있는 것으로 보입니다. ';
+                result_message +=
+                    '마지막으로 비슷한 분위기가 느껴지는 연예인은 ' +
+                    results[prediction[0]].star +
+                    '입니다.';
+                $('.resultMessage').html(result_message);
+
+                var positionIdx = 0;
+                switch (results[prediction[0]].position) {
+                    case '드립':
+                        positionIdx = 0;
+                        break;
+                    case '호구능력자':
+                        positionIdx = 1;
+                        break;
+                    case '뒷북':
+                        positionIdx = 2;
+                        break;
+                    case '나댐':
+                        positionIdx = 3;
+                        break;
+                    case '어리바리':
+                        positionIdx = 4;
+                        break;
+                    case 'TMT':
+                        positionIdx = 5;
+                        break;
+                    case '팩트폭격기':
+                        positionIdx = 6;
+                        break;
+                    case '연애상담':
+                        positionIdx = 7;
+                        break;
+                    case '인스타':
+                        positionIdx = 8;
+                        break;
+                    case '술무새':
+                        positionIdx = 9;
+                        break;
+                    case '바른생활':
+                        positionIdx = 10;
+                        break;
+                    case '리액션':
+                        positionIdx = 11;
+                        break;
+                }
+
+				
+				
+				
+				
+				
+				
+				
+                var goodPartner = partners[positionIdx].good;
+                var badPartner = partners[positionIdx].bad;
+
+                $('#goodPartner').html(goodPartner + ' 담당');
+                $('#badPartner').html(badPartner + ' 담당');
+
+                var word_list = [
+                    {
+                        text: results[prediction[0]].result,
+                        weight: 46,
+                        link: '#popup1',
+                    },
+                    {
+                        text: results[prediction[1]].result,
+                        weight: 44,
+                        link: '#popup2',
+                    },
+                    {
+                        text: results[prediction[2]].result,
+                        weight: 41,
+                        link: '#popup3',
+                    },
+                    {
+                        text: results[prediction[3]].result,
+                        weight: 40,
+                        link: '#popup4',
+                    },
+                    {
+                        text: results[prediction[4]].result,
+                        weight: 39,
+                        link: '#popup5',
+                    },
+                    {
+                        text: results[prediction[5]].result,
+                        weight: 38,
+                        link: '#popup6',
+                    },
+                    {
+                        text: results[prediction[6]].result,
+                        weight: 35,
+                        link: '#popup7',
+                    },
+                    {
+                        text: results[prediction[7]].result,
+                        weight: 34,
+                        link: '#popup8',
+                    },
+                    {
+                        text: results[prediction[8]].result,
+                        weight: 34,
+                        link: '#popup9',
+                    },
+                    {
+                        text: results[prediction[9]].result,
+                        weight: 32,
+                        link: '#popup10',
+                    },
+                    {
+                        text: results[prediction[10]].result,
+                        weight: 32,
+                        link: '#popup11',
+                    },
+                    {
+                        text: results[prediction[11]].result,
+                        weight: 31,
+                        link: '#popup12',
+                    },
+                ];
+
+                $('#my_favorite_latin_words').jQCloud(word_list, {
+                    center: { x: 0.5, y: 0.5 },
+                    shape: 'elliptic',
+                    autoResize: true,
+                    fontSize: ['4.2rem', '2.2rem'],
+                });
+            }
+        </script>
+			
+			
+			
+			
+			
+			
+        <script src="https://3seclab.com/test/0/odometer/odometer.min.js"></script>
+        
+			
+        <script>
+            console.log;
+            var lastScrollTop = 0;
+            var bottom_object = $('.subtitle').offset().top + $('.subtitle').height();
+            var top_object = $('.subtitle').offset().top;
+            $(window).scroll(function (event) {
+                var top_scroll = $(document).scrollTop();
+                if ($('#header').css('opacity') == 0) {
+                    if (top_scroll > lastScrollTop && top_scroll > bottom_object - 50) {
+                        $('#header').show();
+                        $('#header').animate({ opacity: '1' });
+                    }
+                }
+
+                if ($('#header').css('opacity') == 1) {
+                    if (top_scroll < lastScrollTop && top_scroll < bottom_object) {
+                        $('#header').animate({ opacity: '0' });
+                        $('#header').hide();
+                    }
+                }
+
+                lastScrollTop = top_scroll;
+            });
+        </script>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+        <!-- <script>
+            function clickHeader() {
+                gtag('event', '첫인상-헤더 클릭');
+                location.href = 'https://3seclab.com';
+            }
+            function goHome() {
+                gtag('event', '첫인상-카드(3초연구소) 클릭');
+                location.href = 'https://3seclab.com';
+            }
+            function goEn() {
+                gtag('event', '첫인상-영어버튼 클릭');
+                location.href = 'https://3seclab.com/test/0/en';
+            }
+            function clickInsta() {
+                gtag('event', '첫인상-인스타버튼 클릭');
+                location.href = 'https://instagram.com/3seclab.official';
+            }
+            function clickCard() {
+                gtag('event', '첫인상-카드(학창시절) 클릭');
+                location.href = 'https://3seclab.com/test/2';
+            }
+        </script> -->
+			
+			
+			
+			
+
+        <!-- Taboola -->
+        <script type="text/javascript">
+            window._taboola = window._taboola || [];
+            _taboola.push({ flush: true });
+        </script>
+        <script src="https://kit.fontawesome.com/ebfafc2eb8.js" crossorigin="anonymous"></script>
+    </body>
+    <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-gender toggle
-Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- -->
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
 </html>

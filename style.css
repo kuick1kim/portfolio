@@ -874,3 +874,7 @@ a Circle-image */
     font-size: 2rem;
     color: #f0e6d2;
 }
+.ad-banner {
+    width: 320px;
+    margin: 0 auto;
+}

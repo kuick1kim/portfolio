@@ -816,6 +816,11 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
 			
 			
 			<script>
+				
+				
+				
+				
+				
             function drawWordCloud(prediction) {
 		    
 		    
@@ -826,15 +831,15 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
 		    
 		    
 		    
-                const partners = getPartnersData();
-                for (var i = 0; i < 20; i++) {
-                    var name = '.popup' + (i + 1) + '_name';
-                    var percentageName = '.popup' + (i + 1) + '_percentage';
-                    $(name).html(results[prediction[i]].result);
-                    $(percentageName).html('' + (((12 - i) / 12) * 100).toFixed(2) + '%');
+//                 const partners = getPartnersData();
+//                 for (var i = 0; i < 20; i++) {
+//                     var name = '.popup' + (i + 1) + '_name';
+//                     var percentageName = '.popup' + (i + 1) + '_percentage';
+//                     $(name).html(results[prediction[i]].result);
+//                     $(percentageName).html('' + (((12 - i) / 12) * 100).toFixed(2) + '%');
 
-                    gtag('event', results[prediction[i]].result);
-                }
+//                     gtag('event', results[prediction[i]].result);
+//                 }
 		    
 		    
 		    

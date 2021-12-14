@@ -822,15 +822,19 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
 		    
 		    
                 const results = getData();
-//                 const partners = getPartnersData();
-//                 for (var i = 0; i < 20; i++) {
-//                     var name = '.popup' + (i + 1) + '_name';
-//                     var percentageName = '.popup' + (i + 1) + '_percentage';
-//                     $(name).html(results[prediction[i]].result);
-//                     $(percentageName).html('' + (((12 - i) / 12) * 100).toFixed(2) + '%');
+		    
+		    
+		    
+		    
+                const partners = getPartnersData();
+                for (var i = 0; i < 20; i++) {
+                    var name = '.popup' + (i + 1) + '_name';
+                    var percentageName = '.popup' + (i + 1) + '_percentage';
+                    $(name).html(results[prediction[i]].result);
+                    $(percentageName).html('' + (((12 - i) / 12) * 100).toFixed(2) + '%');
 
-//                     gtag('event', results[prediction[i]].result);
-//                 }
+                    gtag('event', results[prediction[i]].result);
+                }
 		    
 		    
 		    
@@ -849,78 +853,78 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
 		    
 		    
 		    
-//                 $('.resultPosition').html(
-//                     '그룹 내 포지션 : ' + results[prediction[0]].position + ' 담당'
-//                 );
-//                 var result_message = '';
-//                 result_message +=
-//                     "인공지능이 판단한 당신의 첫인상은 '" +
-//                     results[prediction[1]].adjective +
-//                     ' ' +
-//                     results[prediction[0]].noun +
-//                     "' 입니다. ";
-//                 result_message +=
-//                     '본 테스트 결과는 전체의 ' +
-//                     (
-//                         (results[prediction[0]].percentage * results[prediction[1]].percentage) /
-//                         10
-//                     ).toFixed(2) +
-//                     '%에 속하며 ';
-//                 result_message +=
-//                     "가족, 친구 등 좋아하는 내 사람들과 있을 때는 '" +
-//                     results[prediction[0]].position +
-//                     "' 역할을 맡고 있습니다. ";
-//                 result_message +=
-//                     '또한 ' +
-//                     results[prediction[1]].adjective +
-//                     ' 외모를 가진 당신은 ' +
-//                     results[prediction[0]].ability +
-//                     '을 지니고 있는 것으로 보입니다. ';
-//                 result_message +=
-//                     '마지막으로 비슷한 분위기가 느껴지는 연예인은 ' +
-//                     results[prediction[0]].star +
-//                     '입니다.';
-//                 $('.resultMessage').html(result_message);
+                $('.resultPosition').html(
+                    '그룹 내 포지션 : ' + results[prediction[0]].position + ' 담당'
+                );
+                var result_message = '';
+                result_message +=
+                    "인공지능이 판단한 당신의 첫인상은 '" +
+                    results[prediction[1]].adjective +
+                    ' ' +
+                    results[prediction[0]].noun +
+                    "' 입니다. ";
+                result_message +=
+                    '본 테스트 결과는 전체의 ' +
+                    (
+                        (results[prediction[0]].percentage * results[prediction[1]].percentage) /
+                        10
+                    ).toFixed(2) +
+                    '%에 속하며 ';
+                result_message +=
+                    "가족, 친구 등 좋아하는 내 사람들과 있을 때는 '" +
+                    results[prediction[0]].position +
+                    "' 역할을 맡고 있습니다. ";
+                result_message +=
+                    '또한 ' +
+                    results[prediction[1]].adjective +
+                    ' 외모를 가진 당신은 ' +
+                    results[prediction[0]].ability +
+                    '을 지니고 있는 것으로 보입니다. ';
+                result_message +=
+                    '마지막으로 비슷한 분위기가 느껴지는 연예인은 ' +
+                    results[prediction[0]].star +
+                    '입니다.';
+                $('.resultMessage').html(result_message);
 
-//                 var positionIdx = 0;
-//                 switch (results[prediction[0]].position) {
-//                     case '드립':
-//                         positionIdx = 0;
-//                         break;
-//                     case '호구능력자':
-//                         positionIdx = 1;
-//                         break;
-//                     case '뒷북':
-//                         positionIdx = 2;
-//                         break;
-//                     case '나댐':
-//                         positionIdx = 3;
-//                         break;
-//                     case '어리바리':
-//                         positionIdx = 4;
-//                         break;
-//                     case 'TMT':
-//                         positionIdx = 5;
-//                         break;
-//                     case '팩트폭격기':
-//                         positionIdx = 6;
-//                         break;
-//                     case '연애상담':
-//                         positionIdx = 7;
-//                         break;
-//                     case '인스타':
-//                         positionIdx = 8;
-//                         break;
-//                     case '술무새':
-//                         positionIdx = 9;
-//                         break;
-//                     case '바른생활':
-//                         positionIdx = 10;
-//                         break;
-//                     case '리액션':
-//                         positionIdx = 11;
-//                         break;
-//                 }
+                var positionIdx = 0;
+                switch (results[prediction[0]].position) {
+                    case '드립':
+                        positionIdx = 0;
+                        break;
+                    case '호구능력자':
+                        positionIdx = 1;
+                        break;
+                    case '뒷북':
+                        positionIdx = 2;
+                        break;
+                    case '나댐':
+                        positionIdx = 3;
+                        break;
+                    case '어리바리':
+                        positionIdx = 4;
+                        break;
+                    case 'TMT':
+                        positionIdx = 5;
+                        break;
+                    case '팩트폭격기':
+                        positionIdx = 6;
+                        break;
+                    case '연애상담':
+                        positionIdx = 7;
+                        break;
+                    case '인스타':
+                        positionIdx = 8;
+                        break;
+                    case '술무새':
+                        positionIdx = 9;
+                        break;
+                    case '바른생활':
+                        positionIdx = 10;
+                        break;
+                    case '리액션':
+                        positionIdx = 11;
+                        break;
+                }
 
 				
 				
@@ -929,11 +933,11 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
 				
 				
 				
-//                 var goodPartner = partners[positionIdx].good;
-//                 var badPartner = partners[positionIdx].bad;
+                var goodPartner = partners[positionIdx].good;
+                var badPartner = partners[positionIdx].bad;
 
-//                 $('#goodPartner').html(goodPartner + ' 담당');
-//                 $('#badPartner').html(badPartner + ' 담당');
+                $('#goodPartner').html(goodPartner + ' 담당');
+                $('#badPartner').html(badPartner + ' 담당');
 
 		    
 		    

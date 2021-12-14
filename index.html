@@ -775,6 +775,8 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
                 location.href = 'https://awesome-euclid-ad1cbc.netlify.app/';
             }
 
+		
+		
             function closePop() {
                 document.body.scrollIntoView(true);
                 setTimeout(function () {
@@ -911,6 +913,16 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
                 $('#goodPartner').html(goodPartner + ' 담당');
                 $('#badPartner').html(badPartner + ' 담당');
 
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
+		    
                 var word_list = [
                     {
                         text: results[prediction[0]].result,
@@ -976,9 +988,11 @@ https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
 
                 $('#my_favorite_latin_words').jQCloud(word_list, {
                     center: { x: 0.5, y: 0.5 },
+		    colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc"],
                     shape: 'elliptic',
                     autoResize: true,
-                    fontSize: ['4.2rem', '2.2rem', '2rem', '1.9rem'],
+		    autoResize: true,
+//                     fontSize: ['4.2rem', '2.2rem'],
                 });
             }
         </script>

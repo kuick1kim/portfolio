@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html>
+    <head>    	    
+        <meta charset="utf-8" />
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+            name="description"
+            content="다른 사람이 본 내 인상은 어떨까? Ấn tượng của tôi mà người khác nhìn thấy như thế nào?| 당신의 인상 느낌은? Ấn tượng của bạn như thế nào?"
+        />
+        <meta
+            name="keywords"
+            content="AI FACE, ai face, ấn tượng đầu tiên, nhận diện khuôn mặt, Phân tích hình ảnh khuôn mặt AI "
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI " />
+        <meta
+            property="og:description"
+            content="다른 사람이 본 내 인상은 어떨까? Ấn tượng của tôi mà người khác nhìn thấy như thế nào?| 당신의 인상 느낌은? Ấn tượng của bạn như thế nào?"
+        />
+        <meta
+            property="og:image"
+            content="https://raw.githubusercontent.com/kuick1kim/portfolio/main/data/999.png"
+        />
+     
+
+		
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+		
+		
+        <!-- font -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
+        />
+
+		
+        <!-- font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
+
+		
+        <link rel="shortcut icon" href="/data/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>AI Đối mặt</title>
+		
+        <!-- jQCloud -->
+        <link rel="stylesheet" type="text/css" href="data/jqcloud.min.css" />
+	    
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61b0438963e5691d"></script>  	
+	    
+	   	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4991968404959725"
+     			crossorigin="anonymous"></script>
+	    
+    </head>
+	
+	
+	
+    <body>
+	    
+	    
+        <header id="header">
+            <a onclick="clickHeader();">
+                <div>
+                    <span class="lab3">
+                        AI
+                    </span>
+                    | phân tích hình ảnh khuôn mặt
+                </div>
+            </a>
+        </header>
+        <content>
+            <!-- navigation bar -->
+			
+		<nav class="navbar navbar-expand-lg navbar-light nav-distance">
+                	<a class="brand navbar-brand" href="https://awesome-euclid-ad1cbc.netlify.app/">Ai Face</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+			
+                </button>
+
+				
+				
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<!--                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="https://awesome-euclid-ad1cbc.netlify.app/" class="nav-link">까</a>
+                        </li>                        
+                    </ul> -->
+			
+                </div>
+            </nav>
+
+			
+            <!-- Title -->
+            <section class="section">
+                <h2 class="subtitle">
+                    AI FACE
+                </h2>
+                <div class="drag-text-a">
+				<h3>
+					AI phân tích hình ảnh khuôn mặt<br><br>
+                                AI가 세상이 느끼는 당신의 외모를 분석합니다. <br>AI phân tích cách thế giới nhìn nhận ngoại hình của bạn.<br>
+					중요한 사람 만나기 전에 사용해 보세요  <br> Sử dụng chương trình này trước khi gặp ai đó quan trọng
+				
+					</h3></div>				
+            
+                    
+
+                
+            
+            </section>
+			
+
+            <!-- File upload input -->
+            <div class="mt-5 file-upload">
+                <div class="image-upload-wrap">
+                    <input
+                        class="file-upload-input";
+                        type="file";
+                        onchange="readURL(this);"
+                        accept="image/*"
+                    />
+                    <div class="drag-text">
+
+			    <h3>Click This!!</h3>
+                    </div>
+                </div>
+                <div class="file-upload-content">
+                    <div class="d-flex justify-content-center">
+                        <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                    </div>
+
+					
+					
+					
+					
+					
+                    <div class="image-title-wrap">
+                        <div class="loaders">
+                            <div class="loader loader--style8" title="7">
+                                <svg
+                                    version="1.1"
+                                    id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px"
+                                    y="0px"
+                                    width="24px"
+                                    height="30px"
+                                    viewBox="0 0 24 30"
+                                    style="enable-background: new 0 0 50 50;"
+                                    xml:space="preserve"
+                                >
+                                    <rect
+                                        x="0"
+                                        y="10"
+                                        width="4"
+                                        height="10"
+                                        fill="#333"
+                                        opacity="0.2"
+                                    >
+                                        <animate
+                                            attributeName="opacity"
+                                            attributeType="XML"
+                                            values="0.2; 1; .2"
+                                            begin="0s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="height"
+                                            attributeType="XML"
+                                            values="10; 20; 10"
+                                            begin="0s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="y"
+                                            attributeType="XML"
+                                            values="10; 5; 10"
+                                            begin="0s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                    </rect>
+                                    <rect
+                                        x="8"
+                                        y="10"
+                                        width="4"
+                                        height="10"
+                                        fill="#333"
+                                        opacity="0.2"
+                                    >
+                                        <animate
+                                            attributeName="opacity"
+                                            attributeType="XML"
+                                            values="0.2; 1; .2"
+                                            begin="0.15s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="height"
+                                            attributeType="XML"
+                                            values="10; 20; 10"
+                                            begin="0.15s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="y"
+                                            attributeType="XML"
+                                            values="10; 5; 10"
+                                            begin="0.15s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                    </rect>
+                                    <rect
+                                        x="16"
+                                        y="10"
+                                        width="4"
+                                        height="10"
+                                        fill="#333"
+                                        opacity="0.2"
+                                    >
+                                        <animate
+                                            attributeName="opacity"
+                                            attributeType="XML"
+                                            values="0.2; 1; .2"
+                                            begin="0.3s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="height"
+                                            attributeType="XML"
+                                            values="10; 20; 10"
+                                            begin="0.3s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                        <animate
+                                            attributeName="y"
+                                            attributeType="XML"
+                                            values="10; 5; 10"
+                                            begin="0.3s"
+                                            dur="0.6s"
+                                            repeatCount="indefinite"
+                                        />
+                                    </rect>
+                                </svg>
+                            </div>
+                            <h2 class="loadingMessage">
+                                AI가 당신의 첫 인상을 분석 중입니다.<br>
+				AI đang phân tích ấn tượng đầu tiên của bạn.
+
+                            </h2>
+                        </div>
+
+					
+						
+						
+                        <div class="result">
+                            <h2 class="subtitle" style="font-size: 2.5rem; margin-bottom: 0.5rem;">
+                                당신의 첫인상 느낌은?<br>Ngoại hình của anh có cảm giác như thế này
+                            </h2>
+                            <div
+                                class="upload-image-circle ratio img-responsive img-circle mt-5"
+                            ></div>
+                            <div class="resultName"></div>
+							
+							
+							<h2><p></h2>
+                            
+                            
+							
+							<!-- ////////////////////////////////////////// -->
+							<h2><p></h2>
+							 <!-- <div class="date mt-2" style="font-size: 1.7rem; margin-bottom: 0px;">
+                                 
+                            </div> -->
+				
+				
+				
+				
+				
+                            <div
+                                id="my_favorite_latin_words"
+                                style="
+                                    max-width: -webkit-fill-available;
+                                    width: 37rem;
+                                    height: 300px;
+                                    margin: auto;
+                                "
+                            ></div>
+							
+							<!-- ////////////////////////////////////////// -->
+							
+                            <div class="d-flex justify-content-center" style="margin-bottom: 3rem;">
+								
+								
+								
+								
+								
+                                <div>    
+									
+                                </div>
+                                <div style="width: 60px;">
+                                
+                                </div>
+                                <div>
+                                   
+                                </div>
+                            </div>
+							<section class="instagram">
+								*당신은 온 세상에 한사람 뿐이에요<br>bạn là người duy nhất trên thế giới<br>
+								*AI의 판단보다 당신은 소중한 사람 입니다.       <br>Bạn có giá trị hơn khả năng phán đoán của AI.     
+								
+								<br><br>
+								   스크린샷 후 아래 버튼을 누르세요.  <br>Sau khi chụp màn hình, hãy nhấn nút bên dưới.
+                
+            				</section>
+					
+							
+							
+							<button type="button" onclick="retry()" class="remove-image mt-5">
+                                refresh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+			
+			
+			
+			
+			<!-- Button trigger modal -->
+            <button
+                id="btn_popup"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                style="display: none;"
+            ></button>
+
+   
+			
+			
+			<!-- Modal -->
+            <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                            <button type="button" class="btn-close" onclick="closePop();"></button>
+                        </div>
+                        <div class="modal-body">
+				<img   src="data/999.png"   />
+                            <h2>
+                                중요한 사람 만날때<br> Khi gặp người quan trọng
+				    <br>사람들 앞에 설때<br>Khi đứng trước mặt mọi người
+                            </h2>
+                            <h1>
+                                <span class="bottom-line">AI FACE</span>			
+                            </h1>
+				<!--   애드디스 붙인곳 -->
+				<div id="addThis" class="addthis_inline_share_toolbox 39dz"></div>
+
+                            <h3>
+                                 
+                            </h3>
+
+                        </div>
+			    
+                        <div class="modal-footer">
+				
+				<button type="button" class="btn btn-primary" onclick="closePop();">
+								
+					<div>
+						Refresh!!
+					</div>
+                            </button>
+                        </div>
+			    
+                    </div>
+                </div>
+            </div>
+			
+			
+            <h2 class="upload_message">
+                *사진은 저장되지 않습니다.<br>*Ảnh sẽ không được lưu.
+            </h2>
+		
+<!-- 	<선이간다> -->
+            <section class="instagram">
+                <div class="hashtag" style="font-size: 1.8rem; color: #c8aa6e;">
+                    
+                </div>
+            </section>	
+			
+
+            <section class="instagram">
+				
+			<div class="hashtag" style="font-size: 1.8rem; color: #c8aa6e;">
+                   	<br> 광고!!<br>*Quảng cáo <!--   *Tôi sẽ rất cảm ơn nếu bạn nhấp vào quảng cáo. -->
+					
+					
+				<ins class="kakao_ad_area" style="display: none;" data-ad-unit="DAN-l6EadscBymzvk4ux"
+				data-ad-width="320" data-ad-height="100"></ins>
+				<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+					
+<!-- 	######################################################################################## -->
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4991968404959725"
+		     crossorigin="anonymous"></script>
+		<!-- 반응반응형 -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-4991968404959725"
+		     data-ad-slot="9822960687"
+		     data-ad-format="auto"
+		     data-full-width-responsive="true"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+				
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4991968404959725"
+		     crossorigin="anonymous"></script>
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-format="fluid"
+		     data-ad-layout-key="-fa+68+1t-f7+ld"
+		     data-ad-client="ca-pub-4991968404959725"
+		     data-ad-slot="4702743363"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+					
+					
+					
+                </div>
+		</div>
+				
+            </section>
+
+            <div class="copyrightSection">
+				공유하기<br>Truyền bá cho bạn bè<br>
+            
+			<div id="addThis" class="addthis_inline_share_toolbox 39dz"></div>
+				
+				
+			
+            </div>
+            
+            <div class="blank" style="height: 2rem;">
+          
+            </div>
+
+                      
+
+
+			
+			
+			
+        </content>
+		
+		
+		
+		
+		
+		
+		
+        <!-- Sharable Link
+https://teachablemachine.withgoogle.com/models/eoAxUVSVf/ -->
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script type="text/javascript">
+            // More API functions here:
+            // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+            // the link to your model provided by Teachable Machine export panel
+            // const urlTeachableMachine = 'https://urechanger.github.io/myModelServer/idx0_model/';
+			
+			const urlTeachableMachine = 'https://raw.githubusercontent.com/kuick1kim/portfolio/main/model/';
+		                                    
+		                                    
+
+            let model, labelContainer, maxPredictions;
+
+            // Load the image model and setup the webcam
+            async function init() {
+                const modelURL = urlTeachableMachine + 'model.json';
+                const metadataURL = urlTeachableMachine + 'metadata.json';
+
+                // load the model and metadata
+                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                // or files from your local hard drive
+                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+            }
+
+            // run the webcam image through the image model
+            async function predict() {
+                // predict can take in an image, video or canvas html element
+                var face_image = document.getElementById('face-image');
+                const prediction = await model.predict(face_image);
+                prediction.sort((a, b) => (b.probability > a.probability ? 1 : -1));
+
+                var result_probability = 0;
+                var result = [];
+                for (let i = 0; i < 20; i++) {
+                    result.push(prediction[i].className);
+                    if (result_probability < 0.78) {
+                        result_probability += prediction[i].probability;
+                    }
+                }
+
+                return result;
+            }
+        </script>
+
+        <!-- data -->
+        <script src="data/impressionData.js"></script>
+        <script src="data/partnersData.js"></script>
+
+        <!-- jQuery, Popper.js, and Bootstrap JS -->
+		
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"
+        ></script>
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+
+		
+		
+        <!-- kakao adfit -->
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+		
+		
+        <!-- File upload input js -->
+        <script
+            class="jsbin"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+        ></script>
+        <script>
+            $(document).ready(() => {
+                var allResults = [];
+                var resultData = getData();
+                for (let i = 0; i < Object.keys(resultData).length; i++) {
+                    allResults.push(i + 1 + '. ' + resultData[i].result + ' ');
+                }
+                // $('.first-all-results').html(allResults.slice(0, 27));
+                // $('.second-all-results').html(allResults.slice(28, 55));
+            });
+        </script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.upload_message').hide();
+                        $('.image-upload-wrap').hide();
+                        $('.loaders').show();
+                        $('.file-upload-image').show();
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.upload-image-circle').css(
+                            'background-image',
+                            "url('" + e.target.result + "')"
+                        );
+                        $('.file-upload-content').show();
+                        $('.remove-image').hide();
+                        $('.addthis_inline_share_toolbox_irv5').hide();
+                        init().then(async () => {
+                            var prediction = await predict();
+                            drawWordCloud(prediction);
+                            $('.loaders').hide();
+                            $('.file-upload-image').hide();
+                            $('.result').show();
+                            $('.remove-image').show();
+                            $('.addthis_inline_share_toolbox_irv5').show();
+                        });
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    retry();
+                }
+            }
+
+            function retry() {
+                $('#btn_popup').click();
+            }
+
+            function openroot() {
+                gtag('event', '팝업(다시하기)Click!!');
+                location.href = 'https://awesome-euclid-ad1cbc.netlify.app/';
+            }
+	
+		
+            function closePop() {
+                document.body.scrollIntoView(true);		    
+                setTimeout(function () {
+                    location.reload();
+                }, 20);
+		    
+            }
+
+            function removeImg() {
+                $('.upload_message').show();
+                $('.file-upload-input').val('');
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+                $('.result').hide();
+                $('#my_favorite_latin_words').jQCloud('destroy');
+            }
+
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+		
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+        </script>
+	
+	
+        <!-- jQCloud -->
+        <script type="text/javascript" src="data/jqcloud.min.js"></script>
+        
+	<script>
+				
+            function drawWordCloud(prediction) {
+                const results = getData();    
+		    
+                $('.resultName').html(
+                    results[prediction[1]].adjective + ' ' + results[prediction[0]].noun
+                );
+		    
+                var word_list = [
+                    {
+                        text: results[prediction[0]].result,
+                        weight: 46,
+                        link: '#popup1',
+                    },
+                    {
+                        text: results[prediction[1]].result,
+                        weight: 44,
+                        link: '#popup2',
+                    },
+                    {
+                        text: results[prediction[2]].result,
+                        weight: 41,
+                        link: '#popup3',
+                    },
+                    {
+                        text: results[prediction[3]].result,
+                        weight: 40,
+                        link: '#popup4',
+                    },
+                    {
+                        text: results[prediction[4]].result,
+                        weight: 39,
+                        link: '#popup5',
+                    },
+                    {
+                        text: results[prediction[5]].result,
+                        weight: 38,
+                        link: '#popup6',
+                    },
+                    {
+                        text: results[prediction[6]].result,
+                        weight: 35,
+                        link: '#popup7',
+                    },
+                    {
+                        text: results[prediction[7]].result,
+                        weight: 34,
+                        link: '#popup8',
+                    },
+                    {
+                        text: results[prediction[8]].result,
+                        weight: 34,
+                        link: '#popup9',
+                    },
+                    {
+                        text: results[prediction[9]].result,
+                        weight: 32,
+                        link: '#popup10',
+                    },
+                    {
+                        text: results[prediction[10]].result,
+                        weight: 32,
+                        link: '#popup11',
+                    },
+                    {
+                        text: results[prediction[11]].result,
+                        weight: 31,
+                        link: '#popup12',
+                    },
+			
+			{
+                        text: results[prediction[12]].result,
+                        weight: 31,
+                        link: '#popup12',
+                    },
+			{
+                        text: results[prediction[13]].result,
+                        weight: 31,
+                        link: '#popup12',
+                    },
+			{
+                        text: results[prediction[14]].result,
+                        weight: 31,
+                        link: '#popup12',
+                    },
+			
+                ];
+		    
+		    
+
+                $('#my_favorite_latin_words').jQCloud(word_list, {
+                    center: { x: 0.5, y: 0.5 },
+		    colors: ["#b32b5b", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#dbcb8b", "#dbcb8b"],
+                    shape: 'elliptic',
+
+                    fontSize: ['4.2rem', '2.2rem','2rem', '2rem','2rem', '1.8rem','1.3rem', '1.3rem','1.3rem', '1.3rem','1.3rem', '1.3rem'],
+                });
+            }
+        </script>
+			
+			
+			
+			
+
+        <script>
+            console.log;
+            var lastScrollTop = 0;
+            var bottom_object = $('.subtitle').offset().top + $('.subtitle').height();
+            var top_object = $('.subtitle').offset().top;
+            $(window).scroll(function (event) {
+                var top_scroll = $(document).scrollTop();
+                if ($('#header').css('opacity') == 0) {
+                    if (top_scroll > lastScrollTop && top_scroll > bottom_object - 50) {
+                        $('#header').show();
+                        $('#header').animate({ opacity: '1' });
+                    }
+                }
+
+                if ($('#header').css('opacity') == 1) {
+                    if (top_scroll < lastScrollTop && top_scroll < bottom_object) {
+                        $('#header').animate({ opacity: '0' });
+                        $('#header').hide();
+                    }
+                }
+
+                lastScrollTop = top_scroll;
+            });
+        </script>
+			
+
+    </body>
+
+
+
+    <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+</html>
